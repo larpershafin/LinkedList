@@ -173,7 +173,8 @@ double* export(node_t *head, size_t *out_size) { //Listen-Export: Eine Funktion,
     return arr;
 }
 
-void clear(node_t **head) {  //Leeren: Die gesamte Liste löschen und den Speicher freigeben.
+void clear(node_t **head) {
+    //Leeren: Die gesamte Liste löschen und den Speicher freigeben.
     if (head == NULL || *head == NULL) {
         return;
     }
@@ -185,5 +186,3 @@ void clear(node_t **head) {  //Leeren: Die gesamte Liste löschen und den Speich
     }
     *head=NULL;
 }
-
-// Created by imcoo on 9/16/2026.
