@@ -13,12 +13,12 @@ int main() {
     push_back(&head, 67.0);
     delete_at(&head, 6);
     //clear(&head);
-    printf("%.1f\n", pop(&head));
-    printf("%.1f\n", pop(&head));
-    printf("%.1f\n", pop(&head));
-    printf("%.1f\n", pop(&head));
-    printf("%.1f\n", pop(&head));
-    printf("%.1f\n", pop(&head));
-    printf("%.1f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
+    printf("%.2f\n", pop(&head));
     return 0;
 }
