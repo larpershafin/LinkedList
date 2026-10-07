@@ -35,7 +35,7 @@ void add_at(node_t **head, double val, size_t index) {
     }
 
     if (current == NULL) {
-        printf("Index %zu ist ausserhalb der Liste!\n", index);
+        printf("Index %zu ist ausserhalb der Liste\n", index);
         return;
     }
     node_t *new_node = malloc(sizeof(node_t));

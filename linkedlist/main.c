@@ -9,6 +9,8 @@ int main() {
     push(&head, 10.0);
     add_at(&head, 100.0, 2);
     add_at(&head, 200.0, 3);
+    int index = find(head, 200.0);
+    printf("Index: %d\n", index);
     push_front(&head, 67.0);
     push_back(&head, 67.0);
     delete_at(&head, 6);
