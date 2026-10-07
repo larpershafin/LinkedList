@@ -4,6 +4,10 @@
 
 void push(node_t **head, double info) {
     node_t *new_node = malloc(sizeof(node_t));
+    if (new_node == NULL) {
+        return;
+        exit(0);
+    }
     new_node->info = info;
     new_node->next = *head;
     *head = new_node;
@@ -23,7 +27,10 @@ double pop(node_t **head) {
 void add_at(node_t **head, double val, size_t index) {
     if (index == 0) {
         node_t *new_node = malloc(sizeof(node_t));
-        if (new_node == NULL) return;
+        if (new_node == NULL) {
+            return;
+            exit(0);
+        }
         new_node->info = val;
         new_node->next = *head;
         *head = new_node;
@@ -39,7 +46,9 @@ void add_at(node_t **head, double val, size_t index) {
         return;
     }
     node_t *new_node = malloc(sizeof(node_t));
-    if (new_node == NULL) return;
+    if (new_node == NULL) {
+        return;
+    }
 
     new_node->info = val;
     new_node->next = current->next;
@@ -48,7 +57,10 @@ void add_at(node_t **head, double val, size_t index) {
 
 void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neues Element an die erste Position setzen.
     node_t *new_node = malloc(sizeof(node_t));
-    if (!new_node) return;
+    if (!new_node) {
+        return;
+        exit(0);
+    }
     new_node->info = val;
     new_node->next = *head;
     *head = new_node;
@@ -56,7 +68,10 @@ void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neue
 
 void push_back(node_t **head, double val) {  //Einfügen am Ende: Ein neues Element ganz hinten anhängen.
     node_t *new_node = malloc(sizeof(node_t));
-    if (!new_node) return;
+    if (!new_node) {
+        return;
+        exit(0);
+    }
     new_node->info = val;
     new_node->next = NULL;
     if (*head == NULL) {
@@ -82,7 +97,9 @@ double pop_front(node_t **head) {  //Entfernen am Anfang: Das erste Element lös
 }
 
 double pop_back(node_t **head) {  //Entfernen am Ende: Das letzte Element löschen und seinen Wert zurückgeben.
-    if (*head == NULL) return 0.0;
+    if (*head == NULL) {
+        return 0.0;
+    }
     if ((*head)->next == NULL) {
         double val = (*head)->info;
         free(*head);
@@ -166,7 +183,7 @@ void clear(node_t **head) {  //Leeren: Die gesamte Liste löschen und den Speich
         free(curr);
         curr = next;
     }
-    *head = NULL;
+    *head=NULL;
 }
 
 // Created by imcoo on 9/16/2026.
