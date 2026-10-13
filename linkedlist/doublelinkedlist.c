@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linkedlist.h"
 #include "doublelinkedlist.h"
 
 void push(node_t **head, double info) {

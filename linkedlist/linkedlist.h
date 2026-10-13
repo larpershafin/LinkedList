@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+
+//find fixen, delete_at, pop_back, test, add_at, main, array_t und export5
 typedef struct node_t {
     double info;
     struct node_t *next;

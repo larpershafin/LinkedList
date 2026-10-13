@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
+#include <math.h>
+
 void push(node_t **head, double info) {
     node_t *new_node = malloc(sizeof(node_t));
     if (new_node == NULL) {
@@ -94,7 +96,7 @@ double pop_front(node_t **head) {  //Entfernen am Anfang: Das erste Element lös
 
 double pop_back(node_t **head) {  //Entfernen am Ende: Das letzte Element löschen und seinen Wert zurückgeben.
     if (*head == NULL) {
-        return 0.0;
+        return NAN;
     }
     if ((*head)->next == NULL) {
         double val = (*head)->info;
@@ -113,10 +115,10 @@ double pop_back(node_t **head) {  //Entfernen am Ende: Das letzte Element lösch
 }
 
 int find(node_t *head, double val) {    //Suchen: Finden eines Wertes in der Liste (Gibt Position oder Pointer zurück).
-    
+
 }
 
-void delete_at(node_t **head, size_t index) { //Löschen an Stelle X: Ein Element an einem spezifischen Index entfernen.
+void delete_at(node_t **head, size_t index) { //Verknüpft Knoten nicht richtig nach dem Löschen            Löschen an Stelle X: Ein Element an einem spezifischen Index entfernen.
     if (index == 0) {
         node_t *temp = *head;
         *head = temp->next;
@@ -128,11 +130,11 @@ void delete_at(node_t **head, size_t index) { //Löschen an Stelle X: Ein Elemen
         curr = curr->next;
     }
     if (curr == NULL) {
-        printf("Index %zu ist leer", index);
+        printf("Index %zu ist leer", index); //!!! Keine printfs in der Funktion
     }
     curr = curr->next;
     free(curr);
-}
+}  //
 
 double* export(node_t *head, size_t *out_size) { //Listen-Export: Eine Funktion, die den gesamten Inhalt der Liste (z. B. als Array) zurückgibt, damit das Hauptprogramm die Werte unabhängig formatieren und ausgeben kann.
     if (head == NULL) {

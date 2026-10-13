@@ -1,12 +1,14 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef DOUBLELINKEDLIST_H
+#define DOUBLELINKEDLIST_H
 
 #include <stdio.h>
-#include <stdlib.h>
 
+#include <math.h>
+#include <stdlib.h>
+// hier fehlt noch die strict mit head und tail pointer und der anzahl an elementen
 
 typedef struct node {
-    double info;
+    double info; // DATA ..
     struct node *next;
     struct node *prev;
 } node_t;
