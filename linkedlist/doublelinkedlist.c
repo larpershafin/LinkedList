@@ -1,27 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkedlist.h"
+#include "doublelinkedlist.h"
 
 void push(node_t **head, double info) {
-    node_t *new_node = malloc(sizeof(node_t));
-    if (new_node == NULL) {
-        return;
-        exit(0);
-    }
-    new_node->info = info;
-    new_node->next = *head;
-    *head = new_node;
+    push_front(head, info);
 }
 
 double pop(node_t **head) {
-    if (*head == NULL) {
-        printf("Liste ist leer");
-    }
-    node_t *temp = *head;
-    double val = temp->info;
-    *head = temp->next;
-    free(temp);
-    return val;
+    return pop_front(head);
 }
 
 void add_at(node_t **head, double val, size_t index) {
@@ -52,12 +39,15 @@ void add_at(node_t **head, double val, size_t index) {
 
 void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neues Element an die erste Position setzen.
     node_t *new_node = malloc(sizeof(node_t));
-    if (!new_node) {
+    if (new_node == NULL) {
         return;
-        exit(0);
     }
     new_node->info = val;
     new_node->next = *head;
+    new_node->prev = NULL;
+    if (*head != NULL) {
+        (*head)->prev = new_node;
+    }
     *head = new_node;
 }
 
