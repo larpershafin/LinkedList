@@ -7,4 +7,6 @@ add_executable(untitled
         linkedlist/linkedlist.c
         linkedlist/linkedlist.h
         linkedlist/main.c
+        linkedlist/doublelinkedlist.c
+        linkedlist/doublelinkedlist.h
 )

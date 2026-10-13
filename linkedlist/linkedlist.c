@@ -5,8 +5,7 @@
 void push(node_t **head, double info) {
     node_t *new_node = malloc(sizeof(node_t));
     if (new_node == NULL) {
-        return;
-        exit(0);
+        return;;
     }
     new_node->info = info;
     new_node->next = *head;
@@ -25,11 +24,10 @@ double pop(node_t **head) {
 }
 
 void add_at(node_t **head, double val, size_t index) {
-    if (index == 0) {
+    if (index == 0) { //index 0 = push_front
         node_t *new_node = malloc(sizeof(node_t));
         if (new_node == NULL) {
             return;
-            exit(0);
         }
         new_node->info = val;
         new_node->next = *head;
@@ -58,8 +56,7 @@ void add_at(node_t **head, double val, size_t index) {
 void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neues Element an die erste Position setzen.
     node_t *new_node = malloc(sizeof(node_t));
     if (!new_node) {
-        return;
-        exit(0);
+        return;;
     }
     new_node->info = val;
     new_node->next = *head;
@@ -69,8 +66,7 @@ void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neue
 void push_back(node_t **head, double val) {  //Einfügen am Ende: Ein neues Element ganz hinten anhängen.
     node_t *new_node = malloc(sizeof(node_t));
     if (!new_node) {
-        return;
-        exit(0);
+        return;;
     }
     new_node->info = val;
     new_node->next = NULL;

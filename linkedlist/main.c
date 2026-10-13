@@ -21,7 +21,6 @@ int main() {
         //delete_at(&head, 6);
         //index = find(head, 300.0);
         //printf("Index: %d\n", index);
-        //clear(&head);
         // printf("%.2f\n", pop(&head));
         // printf("%.2f\n", pop(&head));
         // printf("%.2f\n", pop(&head));
@@ -29,6 +28,7 @@ int main() {
         // printf("%.2f\n", pop(&head));
         // printf("%.2f\n", pop_back(&head));
         // printf("%.2f\n", pop_front(&head));
+        clear(&head);
     }
     clock_t end = clock();
     double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
