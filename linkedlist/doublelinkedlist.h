@@ -4,14 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Der Knoten für die doppelt verkettete Liste
+
 typedef struct node {
     double info;
     struct node *next;
     struct node *prev;
 } node_t;
 
-// Funktions-Prototypen
+
 void push(node_t **head, double info);
 double pop(node_t **head);
 void add_at(node_t **head, double val, size_t index);

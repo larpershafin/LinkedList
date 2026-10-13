@@ -53,13 +53,14 @@ void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neue
 
 void push_back(node_t **head, double val) {  //Einfügen am Ende: Ein neues Element ganz hinten anhängen.
     node_t *new_node = malloc(sizeof(node_t));
-    if (!new_node) {
+    if (new_node == NULL) {
         return;
-        exit(0);
     }
     new_node->info = val;
     new_node->next = NULL;
-    if (*head == NULL) {
+
+    if (*head != NULL) {
+        new_node->prev = NULL;
         *head = new_node;
         return;
     }
@@ -68,36 +69,42 @@ void push_back(node_t **head, double val) {  //Einfügen am Ende: Ein neues Elem
         curr = curr->next;
     }
     curr->next = new_node;
+    new_node->prev = curr;
 }
 
 double pop_front(node_t **head) {  //Entfernen am Anfang: Das erste Element löschen und seinen Wert zurückgeben.
     if (*head == NULL) {
-        printf("Liste ist leer");
+        printf("Liste leer\n");
+        return 0.0;
     }
-    node_t *temp = *head;
+    node_t *temp=*head;
     double val = temp->info;
     *head = temp->next;
+    if (*head != NULL) {
+        (*head)->prev = NULL;
+    }
     free(temp);
     return val;
 }
 
 double pop_back(node_t **head) {  //Entfernen am Ende: Das letzte Element löschen und seinen Wert zurückgeben.
     if (*head == NULL) {
+        printf("Liste leer\n");
         return 0.0;
     }
-    if ((*head)->next == NULL) {
-        double val = (*head)->info;
-        free(*head);
+    node_t *temp = *head;
+    if (curr->next == NULL) {
+        double val = curr->info;
+        free(curr);
         *head = NULL;
         return val;
     }
-    node_t *curr = *head;
-    while (curr->next->next != NULL) {
+    while (temp->next != NULL) {
         curr = curr->next;
     }
-    double val = curr->next->info;
-    free(curr->next);
-    curr->next = NULL;
+    double val = curr->info;
+    curr->prev->next = NULL;
+    free(curr);
     return val;
 }
 
