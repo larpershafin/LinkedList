@@ -112,19 +112,8 @@ double pop_back(node_t **head) {  //Entfernen am Ende: Das letzte Element lösch
     return val;
 }
 
-int find(node_t *head, double val) {  //Suchen: Finden eines Wertes in der Liste (Gibt Position oder Pointer zurück).
-    node_t *curr = head;
-    size_t index = 0;
-
-    while (curr != NULL) {
-        if (curr->info == val) {
-            return index;
-        }
-        curr = curr->next;
-        index++;
-    }
-
-    return -1; //Wert wurde nd gefunden
+int find(node_t *head, double val) {    //Suchen: Finden eines Wertes in der Liste (Gibt Position oder Pointer zurück).
+    
 }
 
 void delete_at(node_t **head, size_t index) { //Löschen an Stelle X: Ein Element an einem spezifischen Index entfernen.
