@@ -28,8 +28,8 @@ int main() {
         // printf("%.2f\n", pop(&head));
         // printf("%.2f\n", pop_back(&head));
         // printf("%.2f\n", pop_front(&head));
-        clear(&head);
 
+        clear(&head);
     }
     clock_t end = clock();
     double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
