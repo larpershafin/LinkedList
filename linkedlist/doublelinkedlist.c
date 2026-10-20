@@ -150,7 +150,7 @@ void delete_at(node_t **head, size_t index) {
     free(curr);
 }
 
-double* export(node_t *head, size_t *out_size) { //Listen-Export: Eine Funktion, die den gesamten Inhalt der Liste (z. B. als Array) zurückgibt, damit das Hauptprogramm die Werte unabhängig formatieren und ausgeben kann.
+double *export(node_t *head, size_t *out_size) {
     if (head == NULL) {
         *out_size = 0;
         return NULL;
