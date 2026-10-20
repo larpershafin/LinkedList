@@ -2,17 +2,13 @@
 #define DOUBLELINKEDLIST_H
 
 #include <stdio.h>
-
-#include <math.h>
 #include <stdlib.h>
-// hier fehlt noch die strict mit head und tail pointer und der anzahl an elementen
 
 typedef struct node {
-    double info; // DATA ..
+    double info;
     struct node *next;
     struct node *prev;
 } node_t;
-
 
 void push(node_t **head, double info);
 double pop(node_t **head);
