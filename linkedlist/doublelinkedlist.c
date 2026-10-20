@@ -37,7 +37,7 @@ void add_at(node_t **head, double val, size_t index) {
     curr->next = new_node;
 }
 
-void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neues Element an die erste Position setzen.
+void push_front(node_t **head, double val) {
     node_t *new_node = malloc(sizeof(node_t));
     if (new_node == NULL) {
         return;
@@ -51,19 +51,19 @@ void push_front(node_t **head, double val) {     //Einfügen am Anfang: Ein neue
     *head = new_node;
 }
 
-void push_back(node_t **head, double val) {  //Einfügen am Ende: Ein neues Element ganz hinten anhängen.
+void push_back(node_t **head, double val) {
     node_t *new_node = malloc(sizeof(node_t));
     if (new_node == NULL) {
         return;
     }
     new_node->info = val;
     new_node->next = NULL;
-
-    if (*head != NULL) {
+    if (*head == NULL) {
         new_node->prev = NULL;
         *head = new_node;
         return;
     }
+
     node_t *curr = *head;
     while (curr->next != NULL) {
         curr = curr->next;
@@ -72,12 +72,12 @@ void push_back(node_t **head, double val) {  //Einfügen am Ende: Ein neues Elem
     new_node->prev = curr;
 }
 
-double pop_front(node_t **head) {  //Entfernen am Anfang: Das erste Element löschen und seinen Wert zurückgeben.
+double pop_front(node_t **head) {
     if (*head == NULL) {
         printf("Liste leer\n");
         return 0.0;
     }
-    node_t *temp=*head;
+    node_t *temp = *head;
     double val = temp->info;
     *head = temp->next;
     if (*head != NULL) {
@@ -87,28 +87,31 @@ double pop_front(node_t **head) {  //Entfernen am Anfang: Das erste Element lös
     return val;
 }
 
-double pop_back(node_t **head) {  //Entfernen am Ende: Das letzte Element löschen und seinen Wert zurückgeben.
+double pop_back(node_t **head) {
     if (*head == NULL) {
         printf("Liste leer\n");
         return 0.0;
     }
-    node_t *temp = *head;
+    node_t *curr = *head;
+
     if (curr->next == NULL) {
         double val = curr->info;
         free(curr);
         *head = NULL;
         return val;
     }
-    while (temp->next != NULL) {
+
+    while (curr->next != NULL) {
         curr = curr->next;
     }
+
     double val = curr->info;
     curr->prev->next = NULL;
     free(curr);
     return val;
 }
 
-int find(node_t *head, double val) {  //Suchen: Finden eines Wertes in der Liste (Gibt Position oder Pointer zurück).
+int find(node_t *head, double val) {
     node_t *curr = head;
     size_t index = 0;
 
@@ -120,7 +123,7 @@ int find(node_t *head, double val) {  //Suchen: Finden eines Wertes in der Liste
         index++;
     }
 
-    return -1; //Wert wurde nd gefunden
+    return -1;
 }
 
 void delete_at(node_t **head, size_t index) {
@@ -175,7 +178,6 @@ double *export(node_t *head, size_t *out_size) {
 }
 
 void clear(node_t **head) {
-    //Leeren: Die gesamte Liste löschen und den Speicher freigeben.
     if (head == NULL || *head == NULL) {
         return;
     }
@@ -185,5 +187,5 @@ void clear(node_t **head) {
         free(curr);
         curr = next;
     }
-    *head=NULL;
+    *head = NULL;
 }
