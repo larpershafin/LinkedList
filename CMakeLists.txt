@@ -9,4 +9,5 @@ add_executable(untitled
         linkedlist/main.c
         linkedlist/doublelinkedlist.c
         linkedlist/doublelinkedlist.h
+        BitwiseOperators/main.c
 )
