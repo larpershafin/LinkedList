@@ -123,21 +123,30 @@ int find(node_t *head, double val) {  //Suchen: Finden eines Wertes in der Liste
     return -1; //Wert wurde nd gefunden
 }
 
-void delete_at(node_t **head, size_t index) { //Löschen an Stelle X: Ein Element an einem spezifischen Index entfernen.
+void delete_at(node_t **head, size_t index) {
+    if (*head == NULL) {
+        return;
+    }
     if (index == 0) {
-        node_t *temp = *head;
-        *head = temp->next;
-        free(temp);
+        pop_front(head);
         return;
     }
     node_t *curr = *head;
-    for (size_t i = 0; curr != NULL && i < index - 1; i++) {
+    for (size_t i = 0; curr != NULL && i < index; i++) {
         curr = curr->next;
     }
     if (curr == NULL) {
-        printf("Index %zu ist leer", index);
+        printf("Index %zu ist ausserhalb\n", index);
+        return;
     }
-    curr = curr->next;
+
+    if (curr->next != NULL) {
+        curr->next->prev = curr->prev;
+    }
+    if (curr->prev != NULL) {
+        curr->prev->next = curr->next;
+    }
+
     free(curr);
 }
 
