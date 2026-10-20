@@ -20,7 +20,7 @@ void add_at(node_t **head, double val, size_t index) {
         curr = curr->next;
     }
     if (curr == NULL) {
-        printf("Index %zu ist leer", index);
+        printf("Index %zu ist leer\n", index);
         return;
     }
     node_t *new_node = malloc(sizeof(node_t));
@@ -30,6 +30,7 @@ void add_at(node_t **head, double val, size_t index) {
     new_node->info = val;
     new_node->next = curr->next;
     new_node->prev = curr;
+
     if (curr->next != NULL) {
         curr->next->prev = new_node;
     }
