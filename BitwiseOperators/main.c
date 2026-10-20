@@ -79,9 +79,10 @@ int main() {
                     printf("B muss zwischen 0 und 15 liegen.\n");
                 }
                 break;
-            case 10:
+            case 10: {
                 printf("Ein Bit auf 1 setzen. Die Bitnummer wird extra gefragt.\n");
-                int n;
+                unsigned int n;
+                printf("Bitnummer 0 bis 15: \n");
                 if (scanf("%d", &n) == 1 && n<=15) {
                     A = A | (1u << n);
                 } else {
@@ -89,11 +90,32 @@ int main() {
                     while (getchar() != '\n');
                 }
                 break;
-            case 11:
+            }
+            case 11: {
+                unsigned int n;
+                printf("Bitnummer 0 bis 15: \n");
+                if (scanf("%d", &n) == 1 && n<=15) {
+                    A = A & ~(1u << n);
+                } else {
+                    printf("Ungultige Bitnummer. \n");
+                    while (getchar() != '\n');
+                }
+                break;
+            }
 
-            case 12:
-
+            case 12: {
+                unsigned int n;
+                printf("Bitnummer 0 bis 15: \n");
+                if (scanf("%d", &n) == 1 && n<=15) {
+                    A = A^(1u << n);
+                } else {
+                    printf("Ungultige Bitnummer. \n");
+                    while (getchar() != '\n');
+                }
+                break;
+            }
             case 13:
+
 
             case 0:
                 printf("Programm wird beendet\n");
