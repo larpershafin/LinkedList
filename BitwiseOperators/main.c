@@ -114,7 +114,18 @@ int main() {
                 }
                 break;
             }
-            case 13:
+            case 13: {
+                unsigned int n;
+                printf("Bitnummer (0 bis 15): ");
+                if (scanf("%u", &n) == 1 && n <= 15) {
+                    int bit_val = (A >> n) & 1u;
+                    printf("Bit %u ist %d\n", n, bit_val);
+                } else {
+                    printf("Ungueltige Bitnummer!\n");
+                    while(getchar() != '\n');
+                }
+                break;
+            }
 
 
             case 0:
