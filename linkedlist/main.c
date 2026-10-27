@@ -1,38 +1,26 @@
-
 #include <stdio.h>
-#include <time.h>
+#include <stdlib.h>
 #include "linkedlist.h"
 
-int main() {
+int main(void) {
     node_t *head = NULL;
-    clock_t start = clock();
-    int durchlaufe = 40000;
-    for (int i = 0; i < durchlaufe; i++) {
-        push(&head, 5.0);
-        push(&head, 11.0);
-        push(&head, 10.0);
-        add_at(&head, 100.0, 2);
-        add_at(&head, 200.0, 3);
-        add_at(&head, 300.0, 6);
-        int index = find(head, 200.0);
-        //printf("Index: %d\n", index);
-        push_front(&head, 67.0);
-        push_back(&head, 67.0);
-        //delete_at(&head, 6);
-        //index = find(head, 300.0);
-        //printf("Index: %d\n", index);
-        // printf("%.2f\n", pop(&head));
-        // printf("%.2f\n", pop(&head));
-        // printf("%.2f\n", pop(&head));
-        // printf("%.2f\n", pop(&head));
-        // printf("%.2f\n", pop(&head));
-        // printf("%.2f\n", pop_back(&head));
-        // printf("%.2f\n", pop_front(&head));
-
-        clear(&head);
+    size_t size = 0;
+    double *arr = NULL;
+    push_front(&head, 10.5);
+    push_back(&head, 30.0);
+    push_front(&head, 5.0);
+    arr = export(head, &size);
+    for (size_t i = 0; i < size; i++) {
+        printf("%.2f ", arr[i]);
     }
-    clock_t end = clock();
-    double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("Zeit: %f", time_taken);
+    printf("\n");
+    free(arr);
+    add_at(&head, 15.0, 1);
+    int pos = find(head, 10.5);
+    printf("Gefunden bei Index: %d\n", pos);
+    delete_at(&head, 2);
+    pop_front(&head);
+    pop_back(&head);
+    clear(&head);
     return 0;
 }
