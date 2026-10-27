@@ -13,6 +13,7 @@ int main(void) {
     for (size_t i = 0; i < size; i++) {
         printf("%.2f ", arr[i]);
     }
+
     printf("\n");
     free(arr);
     add_at(&head, 15.0, 1);
