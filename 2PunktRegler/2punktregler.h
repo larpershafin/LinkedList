@@ -1,8 +1,7 @@
-//
-// Created by imcoo on 10/27/2026.
-//
+#ifndef ZWEIPUNKTREGLER_H
+#define ZWEIPUNKTREGLER_H
 
-#ifndef UNTITLED_2PUNKTREGLER_H
-#define UNTITLED_2PUNKTREGLER_H
+int berechne_2punkt(double sollwert, double istwert);
+double simuliere_strecke(double istwert, int heizung);
 
-#endif //UNTITLED_2PUNKTREGLER_H
+#endif
