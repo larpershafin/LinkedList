@@ -15,6 +15,14 @@ int main() {
     uint16_t A = 0, B =  0;
     int auswahl;
     do {
+        printf("\nA  Hex: %04X\n", A);
+        printf("   Bits: ");
+        print_bits(A);
+        printf("\n");
+        printf("B  Hex: %04X\n", B);
+        printf("   Bits: ");
+        print_bits(B);
+        printf("\n\n");
         printf("1      Neue Hexzahl für A einlesen\n");
         printf("2    	 Neue Hexzahl für B einlesen.\n");
         printf("3      Normale Addition. A = A + B\n");
@@ -37,11 +45,11 @@ int main() {
         switch (auswahl) {
             case 1:
                 printf("Neuer Hexwert für A eingeben: \n");
-                scanf("%d", &A);
+                scanf("%hx", &A);
                 break;
             case 2:
                 printf("Neuer Hexwet für B eingeben: \n");
-                scanf("%d", &B);
+                scanf("%hx", &B);
                 break;
             case 3:
                 printf("Normale Addition. A = A + B\n");
