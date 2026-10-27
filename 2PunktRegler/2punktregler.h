@@ -1,0 +1,8 @@
+//
+// Created by imcoo on 10/27/2026.
+//
+
+#ifndef UNTITLED_2PUNKTREGLER_H
+#define UNTITLED_2PUNKTREGLER_H
+
+#endif //UNTITLED_2PUNKTREGLER_H

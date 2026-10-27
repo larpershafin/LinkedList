@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 void print_bits(uint16_t val) {
     for (int i = 15; i >= 0; i--) {
@@ -15,6 +16,7 @@ int main() {
     uint16_t A = 0, B =  0;
     int auswahl;
     do {
+        system("cls");
         printf("\nA  Hex: %04X\n", A);
         printf("   Bits: ");
         print_bits(A);
