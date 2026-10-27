@@ -15,7 +15,7 @@ int main() {
         printf("Zeit: %2d | Soll: %.1f | Ist: %.1f | Heizung: %d\n", t, soll, ist, an);
         fflush(stdout);
         ist = simuliere_strecke(ist, an);
-        Sleep(1000);
+        Sleep(1000); //1 Sekunde warten bevor man den nächsten Temperaturwert ausgibt
     }
 
     printf("\nSimulation beendet.\n");
