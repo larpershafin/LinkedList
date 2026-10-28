@@ -6,6 +6,7 @@ int main() {
     double soll = 21.0;
     double ist = 15.0;
 
+
     printf("Sollwert: ");
     scanf("%lf", &soll);
     printf("\n");
