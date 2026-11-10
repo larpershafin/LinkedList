@@ -1,8 +1,7 @@
-//
-// Created by imcoo on 10/28/2026.
-//
+#ifndef PIDREGLER_H
+#define PIDREGLER_H
 
-#ifndef UNTITLED_PIDREGLER_H
-#define UNTITLED_PIDREGLER_H
+double berechne_pid(double sollwert, double istwert, double *integral, double *letzter_fehler);
+double simuliere_strecke_pid(double istwert, double stellgroesse);
 
-#endif //UNTITLED_PIDREGLER_H
+#endif
