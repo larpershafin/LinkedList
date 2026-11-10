@@ -6,10 +6,6 @@ set(CMAKE_C_STANDARD 11)
 # 1. Bitwise Operators Programm
 add_executable(BitwiseOperators
         BitwiseOperators/main.c
-        PID-Regler/pidregler.c
-        PID-Regler/pidregler.h
-        PID-Regler/main.c
-        PIDRegler/pidregler.h
 )
 
 # 2. 2-Punkt-Regler Programm
@@ -18,16 +14,14 @@ add_executable(ZweiPunktRegler
         2PunktRegler/2punktregler.c
 )
 
-# 3. Linked List Programm (Standardmäßig einfach verkettete Liste)
+# 3. Linked List Programm
 add_executable(LinkedLists
         linkedlist/main.c
         linkedlist/linkedlist.c
 )
 
+# 4. PID-Regler Programm
 add_executable(PIDRegler
         PIDRegler/main.c
         PIDRegler/pidregler.c
 )
-
-# Falls du stattdessen die doppelt verkettete Liste testen willst,
-# tausche 'linkedlist.c' oben gegen 'doublelinkedlist.c' aus.
