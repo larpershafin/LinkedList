@@ -3,13 +3,7 @@
 #include <math.h>
 #include "linkedlist.h"
 
-void push(node_t **head, double info) {
-    push_front(head, info);
-}
 
-double pop(node_t **head) {
-    return pop_front(head);
-}
 
 void push_front(node_t **head, double val) {
     node_t *new_node = malloc(sizeof(node_t));

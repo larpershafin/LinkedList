@@ -6,6 +6,10 @@ set(CMAKE_C_STANDARD 11)
 # 1. Bitwise Operators Programm
 add_executable(BitwiseOperators
         BitwiseOperators/main.c
+        PID-Regler/pidregler.c
+        PID-Regler/pidregler.h
+        PID-Regler/main.c
+        PIDRegler/pidregler.h
 )
 
 # 2. 2-Punkt-Regler Programm

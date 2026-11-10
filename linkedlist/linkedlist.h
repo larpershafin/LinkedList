@@ -11,8 +11,8 @@ typedef struct node_t {
 void push(node_t **head, double info);
 double pop(node_t **head);
 void add_at(node_t **head, double val, size_t index);
-void push_front(node_t **head, double val);
-void push_back(node_t **head, double val);
+void push_front(node_t **head, double val); //korrigieren
+void push_back(node_t **head, double val); //korrigieren
 double pop_front(node_t **head);
 double pop_back(node_t **head);
 int find(node_t *head, double val);
