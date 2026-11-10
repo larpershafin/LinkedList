@@ -24,5 +24,10 @@ add_executable(LinkedLists
         linkedlist/linkedlist.c
 )
 
+add_executable(PIDRegler
+        PIDRegler/main.c
+        PIDRegler/pidregler.c
+)
+
 # Falls du stattdessen die doppelt verkettete Liste testen willst,
 # tausche 'linkedlist.c' oben gegen 'doublelinkedlist.c' aus.
